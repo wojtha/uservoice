@@ -38,7 +38,7 @@ Alternatively, you can set the values via the environment variables:
 
 ### Available settings
 
-* Required: `script_id` is the ID of the widget you want to use (create a widget under Settings > Channels > Javascript Widgets and copy the ID from the code)
+* Required: `script_key` is the ID of the widget you want to use (create a widget under Settings > Channels > Javascript Widgets and copy the ID from the code)
 * Optional: `sso_key` is your Single Sign-on key that you find Settings > General > User Authentication > Change to "Single Sign-On"
 * Optional: `subdomain is the subdomain of your uservoice URL (e.g. "acme" from "acme.uservoice.com")
 

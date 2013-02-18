@@ -2,7 +2,7 @@ require 'rails/railtie'
 
 ActionView::Base.send(:include, Uservoice::UservoiceViewHelpers)
 
-module UserVoice
+module Uservoice
   class Railtie < Rails::Railtie
     railtie_name :uservoice
   end

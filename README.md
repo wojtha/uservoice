@@ -26,7 +26,7 @@ Then open `config/uservoice.yml` and adjust settings as needed.
 
 Create `config/initializers/uservoice.rb` with the following content:
 
-    UserVoice.config.merge!({:script_id => "XY"})
+    Uservoice.config.merge!({:script_key => "XY"})
 
 ### Available settings
 
@@ -85,6 +85,6 @@ This project is using [Semantic Versioning](http://semver.org).
 
 ## Copyright
 
-Copyright (c) 2010-2012 [il tempo](http://github.com/iltempo) -
+Copyright (c) 2010-2013 [il tempo](http://github.com/iltempo) -
 
 [Alexander Greim](http://github.com/iltempo), released under the MIT license

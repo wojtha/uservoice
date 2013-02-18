@@ -28,6 +28,14 @@ Create `config/initializers/uservoice.rb` with the following content:
 
     Uservoice.config.merge!({:script_key => "XY"})
 
+Alternatively, you can set the values via the environment variables:
+
+    Uservoice.config do |config|
+      config.sso_key    = ENV['USERVOICE_SSO_KEY']
+      config.script_key = ENV['USERVOICE_SCRIPT_KEY']
+      config.subdomain  = ENV['USERVOICE_SUBDOMAIN']
+    end
+
 ### Available settings
 
 * Required: `script_id` is the ID of the widget you want to use (create a widget under Settings > Channels > Javascript Widgets and copy the ID from the code)

@@ -90,6 +90,8 @@ This project is using [Semantic Versioning](http://semver.org).
 
 [Kai Schlichting](http://github.com/lacco)
 
+[Vojtech Kusy](http://github.com/wojtha)
+
 
 ## Copyright
 

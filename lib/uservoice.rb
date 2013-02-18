@@ -1,10 +1,10 @@
 require "ezcrypto"
-
-module Uservoice
-end
-
+require "action_view"
 require "uservoice/config"
 require "uservoice/token"
 require "uservoice/view_helpers"
 
-ActionView::Base.send(:include, Uservoice::UservoiceViewHelpers)
+module Uservoice
+end
+
+require "uservoice/railtie" if defined?(Rails)

@@ -9,26 +9,31 @@ require 'uservoice/view_helpers'
 module Uservoice
   class << self
     # Sets the global Uservoice configuration.
+    #
+    # Call this method to setup default settings in your initializers.
+    #
+    # @example
+    #   Uservoice.config = {
+    #     :sso_key    => '1234567890abcdef'
+    #     :script_key => '1234567890abcdef'
+    #     :subdomain  => 'acme'
+    #   }
+    #
     def config=(hash)
       @config = hash.symbolize_keys
     end
 
     # Reads the global Uservoice configuration.
-    def config
-      @config ||= {}
-    end
-
-    # Call this method to modify defaults in your initializers.
+    #
+    # Call this method to read or tweak the default settings in your initializers.
     #
     # @example
-    #   Uservoice.configure do |config|
-    #     config.sso_key    = '1234567890abcdef'
-    #     config.script_key = '1234567890abcdef'
-    #     config.subdomain  = 'acme'
-    #   end
-    def configure
-      yield(options)
-      config.merge!(options)
+    #   Uservoice.config.merge! {
+    #     :subdomain  => 'acme'
+    #   }
+    #
+    def config
+      @config ||= {}
     end
 
     # Loads the Uservoice configuration from a given YAML file.

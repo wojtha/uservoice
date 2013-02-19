@@ -26,15 +26,15 @@ Then open `config/uservoice.yml` and adjust settings as needed.
 
 Create `config/initializers/uservoice.rb` with the following content:
 
-    Uservoice.config.merge!({:script_key => "XY"})
+    Uservoice.config.merge!({:script_key => 'XY'})
 
 Alternatively, you can set the values via the environment variables in your initializers/uservoice.rb file:
 
-    Uservoice.configure do |config|
-      config.sso_key    = ENV['USERVOICE_SSO_KEY']
-      config.script_key = ENV['USERVOICE_SCRIPT_KEY']
-      config.subdomain  = ENV['USERVOICE_SUBDOMAIN']
-    end
+    Uservoice.config = {
+      :sso_key    => ENV['USERVOICE_SSO_KEY'],
+      :script_key => ENV['USERVOICE_SCRIPT_KEY'],
+      :subdomain  => ENV['USERVOICE_SUBDOMAIN']
+    }
 
 ### Available settings
 

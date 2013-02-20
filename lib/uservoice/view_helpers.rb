@@ -14,11 +14,11 @@ module Uservoice
     # See https://ACCOUNT.uservoice.com/admin2/docs#/widget for options
     # available.
     #
-    def uservoice_config_javascript(options={})      
+    def uservoice_config_javascript(options={})
       if options[:sso] && options[:sso][:guid]
-        options.merge!({:params => {:sso => Uservoice::Token.default(options.delete(:sso)).to_s}})
+        options.merge!({:params => {:sso => Uservoice::Token.default(options).to_s}})
       end
-      
+
       script = <<-EOS
         <script type=\"text/javascript\">
           var uvOptions = #{options.to_json};

@@ -24,7 +24,7 @@ module Uservoice
     #   }
     #
     def config=(hash)
-      @config = hash.symbolize_keys
+      @config = hash.with_indifferent_access
     end
 
     # Reads the global Uservoice configuration.
@@ -37,7 +37,7 @@ module Uservoice
     #   }
     #
     def config
-      @config ||= {}
+      @config ||= HashWithIndifferentAccess.new
     end
 
     # Loads the Uservoice configuration from a given YAML file.
@@ -45,7 +45,7 @@ module Uservoice
     def load_configuration(config_file)
       config_file = File.expand_path(config_file)
       config_hash = YAML.load(ERB.new(File.read(config_file)).result).with_indifferent_access
-      self.config = config_hash || {}
+      self.config = config_hash[:uservoice] || {}
     end
   end
 end

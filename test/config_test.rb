@@ -2,11 +2,10 @@ require "test_helper"
 
 class UservoiceConfigTest < ActiveSupport::TestCase
   def setup
-    Uservoice.reset_config
-  end
-
-  def teardown
-    Uservoice.reset_config
+    config_file = Rails.root.join('config', 'uservoice.yml')
+    if File.exist?(config_file)
+      Uservoice.load_configuration(config_file)
+    end
   end
 
   def test_return_config_from_yml
